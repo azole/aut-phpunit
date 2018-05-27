@@ -6,19 +6,19 @@
  * Time: 17:33
  */
 
-namespace Tests\Chap1;
+namespace Tests\Chap2;
 
 use PHPUnit\Framework\TestCase;
 
 final class LogAnalyzerTest extends TestCase
 {
+    /*
     private $analyzer;
 
     // AUT作者建議：不要用 setUp 來初始化被測試的類別，建議採用工廠方法
-    /*
     protected function setUp()
     {
-        $this->analyzer = new \Aut\Chap1\LogAnalyzer();
+        $this->analyzer = new \Aut\Chap2\LogAnalyzer();
     }
 
     protected function tearDown()
@@ -30,7 +30,7 @@ final class LogAnalyzerTest extends TestCase
 
     private function MakeAnalyzer()
     {
-        return new \Aut\Chap1\LogAnalyzer();
+        return new \Aut\Chap2\LogAnalyzer();
     }
 
     /**

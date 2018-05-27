@@ -6,7 +6,7 @@
  * Time: 17:28
  */
 
-namespace Aut\Chap1;
+namespace Aut\Chap2;
 
 
 class LogAnalyzer

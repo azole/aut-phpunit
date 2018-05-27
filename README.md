@@ -2,6 +2,7 @@
 
 PHP examples
 
+可藉由切換分支看到不同的範例。
 
 ## Resources
 

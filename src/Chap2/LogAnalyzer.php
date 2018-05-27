@@ -11,8 +11,12 @@ namespace Aut\Chap2;
 
 class LogAnalyzer
 {
+    public $wasLastFileNameValid;
+
     public function isValidLogFileName(String $filename)
     {
+        $this->wasLastFileNameValid = false;
+
         if(empty(trim($filename))) {
             throw new \Exception("filename has to be provided");
         }
@@ -20,6 +24,8 @@ class LogAnalyzer
         if (!preg_match('/\.SLF$/i', $filename)) {
             return false;
         }
+
+        $this->wasLastFileNameValid = true;
         return true;
     }
 

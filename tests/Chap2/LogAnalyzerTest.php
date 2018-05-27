@@ -17,6 +17,7 @@ final class LogAnalyzerTest extends TestCase
     {
         return new \Aut\Chap2\LogAnalyzer();
     }
+
     /**
      * @test
      */
@@ -56,5 +57,23 @@ final class LogAnalyzerTest extends TestCase
     {
         $analyzer = $this->MakeAnalyzer();
         $analyzer->isValidLogFileName("");
+    }
+
+    public function filename_Provider()
+    {
+        return array(["badfile.foo", false], ["goodfile.slf", true]);
+    }
+
+    /**
+     * @test
+     * * @dataProvider filename_Provider
+     */
+    public function isValidFileName_WhenCalled_ChangesWasLastFileNameValid($filename, $expected)
+    {
+        $analyzer = $this->makeAnalyzer();
+
+        $analyzer->isValidLogFileName($filename);
+
+        $this->assertEquals($expected, $analyzer->wasLastFileNameValid);
     }
 }

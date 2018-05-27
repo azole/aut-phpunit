@@ -13,7 +13,7 @@ class LogAnalyzer
 {
     public function isValidLogFileName(String $filename)
     {
-        if (preg_match('/\.SLF$/', $filename)) {
+        if (!preg_match('/\.SLF$/', $filename)) {
             return false;
         }
         return true;

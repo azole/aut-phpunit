@@ -13,6 +13,10 @@ class LogAnalyzer
 {
     public function isValidLogFileName(String $filename)
     {
+        if(empty(trim($filename))) {
+            throw new \Exception("filename has to be provided");
+        }
+
         if (!preg_match('/\.SLF$/i', $filename)) {
             return false;
         }

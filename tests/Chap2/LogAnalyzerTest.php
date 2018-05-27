@@ -23,4 +23,28 @@ final class LogAnalyzerTest extends TestCase
 
         $this->assertFalse($result);
     }
+
+    /**
+     * @test
+     */
+    public function isValidLogFileName_GoodExtensionLowercase_ReturnTrue()
+    {
+        $analyzer = new \Aut\Chap2\LogAnalyzer();
+
+        $result = $analyzer->isValidLogFileName("filewithgoodextension.slf");
+
+        $this->assertTrue($result);
+    }
+
+    /**
+     * @test
+     */
+    public function isValidLogFileName_GoodExtensionUppercase_ReturnTrue()
+    {
+        $analyzer = new \Aut\Chap2\LogAnalyzer();
+
+        $result = $analyzer->isValidLogFileName("filewithgoodextension.SLF");
+
+        $this->assertTrue($result);
+    }
 }

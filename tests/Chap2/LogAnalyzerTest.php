@@ -23,10 +23,13 @@ final class LogAnalyzerTest extends TestCase
      */
     public function isValidFileName_BadExtension_ReturnFalse()
     {
+        // Arrange
         $analyzer = $this->makeAnalyzer();
 
+        // Act
         $result = $analyzer->isValidLogFileName("file_with_bad_extension.foo");
 
+        // Assert
         $this->assertFalse($result);
     }
 
